@@ -13,7 +13,7 @@
 #between=T
 #color="gray80"
 
-normal.shader <- function(min, max.val, mu, sd, value.one, value.two=NULL, greater=F, between=F, color="gray80"){
+normal.shader <- function(min, max, mu, sd, value.one, value.two=NULL, greater=F, between=F, color="gray80"){
   
   x.val <- seq(min,max, .001)
   y.val <- dnorm(x.val, mean=mu, sd=sd)
