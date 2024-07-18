@@ -24,7 +24,7 @@ normal.shader <- function(min, max, mu, sd, value.one, value.two=NULL, greater=F
     abline(v=value.one,lty=2, lwd=2)
     abline(v=value.two, lty=2,lwd=2)
   }else if(greater==T){
-    polygon(c(x.val[x.val>=value.one], max.val(x.val), value.one), c(y.val[x.val>=value.one], 0, 0), col=color,
+    polygon(c(x.val[x.val>=value.one], max(x.val), value.one), c(y.val[x.val>=value.one], 0, 0), col=color,
             border=NA)
     abline(v=value.one,lty=2, lwd=2)
     
