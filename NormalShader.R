@@ -1,18 +1,5 @@
 
 #Normal with shading function
-x <- seq(min,max, .001)
-y <- dnorm(values)
-plot(x, y, main="Standard Normal CDF", 
-     type="l")
-min <- -3
-max <- 3
-mu = 0
-sd = 1
-value.one = -1
-value.two = 1
-greater = F
-between = F
-color = "gray80"
 
 
 normal.shader <- function(min, max, mu, sd, value.one, value.two=NULL, greater=F, between=F, color="gray80"){
