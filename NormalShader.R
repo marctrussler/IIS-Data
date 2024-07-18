@@ -13,23 +13,23 @@
 #between=T
 #color="gray80"
 
-normal.shader <- function(min, max, mu, sd, value.one, value.two=NULL, greater=F, between=F, color="gray80"){
+normal.shader <- function(min, max.val, mu, sd, value.one, value.two=NULL, greater=F, between=F, color="gray.val80"){
   
-  x <- seq(min,max, .001)
-  y <- dnorm(values, mean=mu, sd=sd)
+  x.val <- seq(min,max, .001)
+  y.val <- dnorm(x.val, mean=mu, sd=sd)
   
   if(between == T){
-    polygon(c(x[x>=value.one & x<=value.two], value.two, value.one), c(y[x>=value.one & x<=value.two], 0, 0), 
+    polygon(c(x.val[x.val>=value.one & x.val<=value.two], value.two, value.one), c(y.val[x.val>=value.one & x.val<=value.two], 0, 0), 
             col=color, border=NA)
     abline(v=value.one,lty=2, lwd=2)
     abline(v=value.two, lty=2,lwd=2)
   }else if(greater==T){
-    polygon(c(x[x>=value.one], max(x), value.one), c(y[x>=value.one], 0, 0), col=color,
+    polygon(c(x.val[x.val>=value.one], max.val(x.val), value.one), c(y.val[x.val>=value.one], 0, 0), col=color,
             border=NA)
     abline(v=value.one,lty=2, lwd=2)
     
   } else {
-    polygon(c(rev(x[x<=value.one]), min(x), value.one), c(rev(y[x<=value.one]), 0, 0), col=color,
+    polygon(c(rev(x.val[x.val<=value.one]), min(x.val), value.one), c(rev(y.val[x.val<=value.one]), 0, 0), col=color,
             border=NA)
     abline(v=value.one,lty=2, lwd=2)
   }
